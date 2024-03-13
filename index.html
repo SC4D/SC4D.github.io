@@ -36,18 +36,23 @@
         </div>
         <div class="container" style="max-width: 1024px; margin-bottom: 20px;">
             <div class="authors">
+                <a href=>
                     Zijie Wu<sup>1,2</sup>
+                    </a>
                 &nbsp;
-<!--                 <a href=https://richardych.github.io/> -->
+                <a href=https://richardych.github.io/>
                 Chaohui Yu<sup>2</sup>
-<!--                 </a>&nbsp; -->
-                &nbsp;
+                </a>&nbsp;
+                <a href=>
                 Yanqin Jiang<sup>3</sup>
-                &nbsp;
+                </a>&nbsp;
+                <a href=>
                 Chenjie Cao<sup>2</sup>
-                &nbsp;
-                Fan Wang<sup>2</sup>&nbsp;
-                Xiang Bai<sup>1</sup>&nbsp;
+                </a>&nbsp;
+                <a href=>
+                Fan Wang<sup>2</sup></a>&nbsp;
+                <a href=>
+                Xiang Bai<sup>1</sup></a>&nbsp;
                 <br>
             </div>
             <div class="affiliations">
@@ -120,7 +125,7 @@
                     Given a single-view reference video, video-to-4D methods aim to recover a plausible dynamic 3D object that aligns with the video source. In this work, we propose a two-stage video-to-4D framework based on sparse control points, named SC4D, which utilizes separated modeling of appearance and motion to yield superior outcomes. In the coarse stage, we initialize control points as sphere Gaussians and learn a deformation MLP to predict the movements of these control points. Then in the fine stage, we utilize these control points to drive dense Gaussians in the LBS manner, and jointly optimize the appearance and motion together to obtain the final dynamic object. To ensure the fidelity of learned shape and motion in the fine stage, we introduce Adaptive Gaussian (AG) initialization based on control points, and Gaussian Alignment (GA) loss as an additional constraint. 
                 </p>
                 &nbsp;
-                <img src="data/method.png" alt="architecture" style="width: 100%">
+                <img src="data/Video-to-4D.png" alt="architecture" style="width: 100%">
             </div>
         </div>
     </div>
@@ -138,7 +143,7 @@
                     Utilizing our video-to-4D framework, we can successfully extract the resultant dynamic 3D object as well as its motion represented by a set of moving control points. Leveraging this capability, we devise an application tailored for motion transfer predicated on the trajectories of these sparse control points. This application aims to synthesize dynamic objects of distinct entities that exhibit identical motion patterns, all instantiated through text descriptions. To achieve this, we fix the parameters of control points and deformation MLP to ensure motion indentity. Then we re-initialize the video-to-4D results using AG inialization, and adopt a depth-condition ControlNet as guidance to optimize the new dynamic object without motion degeneration. 
                 </p>
                 &nbsp;
-                <img src="data/method.png" alt="architecture" style="width: 100%">
+                <img src="data/Application.png" alt="architecture" style="width: 100%">
             </div>
         </div>
     </div>

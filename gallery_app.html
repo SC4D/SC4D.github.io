@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SC4D: Sparse-Controlled Video-to-4D Generation and Motion Transfer</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="data/assets/css/Highlight-Clean.css">
+    <link rel="stylesheet" href="data/assets/css/styles.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="data/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="data/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="robots" content="noindex">
+
+    <meta property="og:site_name" content="SC4D" />
+    <meta property="og:type" content="video.other" />
+    <meta property="og:title" content="SC4D: Sparse-Controlled Video-to-4D Generation and Motion Transfer" />
+    <meta property="og:description" content="SC4D: Sparse-Controlled Video-to-4D Generation and Motion Transfer." />
+    <meta property="og:url" content="" />
+
+</head>
+
+<body>
+    <div class="highlight-clean" style="padding-bottom: 0px; padding-top: 20px;">
+        <div class="container" style="max-width: 1024px; margin-bottom: 20px">
+            <h1 class="text-center" style="font-size:35px;"><b>SC4D</b>: Sparse-Controlled Video-to-4D Generation and Motion Transfer</h1>
+        </div>
+        <div class="container" style="max-width: 1024px; margin-bottom: 20px;">
+            <div class="authors">
+                <a href=>
+                    Zijie Wu<sup>1,2</sup>
+                    </a>
+                &nbsp;
+                <a href=>
+                Chaohui Yu<sup>2</sup>
+                </a>&nbsp;
+                <a href=>
+                Yanqin Jiang<sup>2,3</sup>
+                </a>&nbsp;
+                <a href=>
+                Chenjie Cao<sup>2</sup>
+                </a>&nbsp;
+                <a href=>
+                Fan Wang<sup>2</sup></a>&nbsp;
+                <a href=>
+                Xiang Bai<sup>1</sup></a>&nbsp;
+                <br>
+            </div>
+            <div class="affiliations">
+                <span><sup>1</sup> Huazhong University of Science and Technology </span>
+                <span><sup>2</sup> DAMO Academy, Alibaba Group </span>
+                <span><sup>3</sup> CASIA </span>
+            </div>
+            <div class="container" style="max-width: 1024px; margin-bottom: 20px">
+                <h1 class="text-center" style="font-size:22px;">Arxiv 2024</h1>
+            </div>
+        </div>
+        <div id="container">
+        <div class="buttons" style="margin-top: 8px; margin-bottom: 8px;">
+            <a class="btn btn-light" role="button" href="">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z"></path>
+                </svg>Paper
+            </a>
+            <a class="btn btn-light" role="button" href="">
+                <svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 
+                            1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 
+                            3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 
+                            2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                </svg>
+                Code
+            </a>
+            <a class="btn btn-light" role="button" href="index.html">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px" viewBox="0 0 375 531">
+                    <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 "></polygon>
+                </svg>
+                Project
+            </a>
+        </div>
+        </div>
+    </div>
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Motion Transfer Application</h2>
+            </div>
+        </div>
+
+       <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/app/aurorus_chanical.mp4" type="video/mp4"></source>
+            </video>
+            <h6 class="caption">a lego style rose</h6>
+        </div>
+        </div> 
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/app/aurorus7.mp4" type="video/mp4"></source>
+            </video>
+            <h6 class="caption">a wooden pistol on fire</h6>
+        </div>
+        </div>
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/app/cat_cheetah.mp4" type="video/mp4"></source>
+            </video>
+            <h6 class="caption">a photo of the Black Widow</h6>
+        </div>
+        </div>
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/app/cat_lion.mp4" type="video/mp4"></source>
+            </video>
+            <h6 class="caption">a photo of a lion</h6>
+        </div>
+        </div>
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+            <div class="compositional captioned_videos">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="data/videos/app/full_black_panther.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">a photo of a lion</h6>
+            </div>
+            </div>
+            <br>
+        
+        <div class="container" style="max-width: 768px;">
+            <div class="compositional captioned_videos">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="data/videos/app/full_black_widow.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">a photo of a lion</h6>
+            </div>
+            </div>
+            <br>
+            
+        <div class="container" style="max-width: 768px;">
+            <div class="compositional captioned_videos">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="data/videos/app/pistol_fire.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">a photo of a lion</h6>
+            </div>
+            </div>
+            <br>
+        
+        <div class="container" style="max-width: 768px;">
+            <div class="compositional captioned_videos">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="data/videos/app/pistol_handgun.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">a photo of a lion</h6>
+            </div>
+            </div>
+            <br>
+        
+        <div class="container" style="max-width: 768px;">
+            <div class="compositional captioned_videos">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="data/videos/app/rose_lego.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">a photo of a lion</h6>
+            </div>
+            </div>
+            <br>
+        
+        <div class="container" style="max-width: 768px;">
+            <div class="compositional captioned_videos">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="data/videos/app/rose_teal.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">a photo of a lion</h6>
+            </div>
+            </div>
+            <br>
+        
+        <div class="container" style="max-width: 768px;">
+            <div class="compositional captioned_videos">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="data/videos/app/spiderman_batman.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">a photo of a lion</h6>
+            </div>
+            </div>
+            <br>
+        
+        <div class="container" style="max-width: 768px;">
+            <div class="compositional captioned_videos">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="data/videos/app/spiderman_scarlet.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">a photo of a lion</h6>
+            </div>
+            </div>
+            <br>
+        
+        <div class="container" style="max-width: 768px;">
+            <div class="compositional captioned_videos">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="data/videos/app/spiderman_stone.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">a photo of a lion</h6>
+            </div>
+            </div>
+            <br>
+        
+        <div class="container" style="max-width: 768px;">
+            <div class="compositional captioned_videos">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="data/videos/app/spiderman_vegeta.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">a photo of a lion</h6>
+            </div>
+            </div>
+            <br>
+
+        <div class="container" style="max-width: 768px;">
+            <div class="compositional captioned_videos">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="data/videos/app/tang_clownfish.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">a photo of a lion</h6>
+            </div>
+            </div>
+            <br>
+        
+        <div class="container" style="max-width: 768px;">
+            <div class="compositional captioned_videos">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="data/videos/app/tang_grouper.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">a photo of a lion</h6>
+            </div>
+            </div>
+            <br>
+        
+        <div class="container" style="max-width: 768px;">
+            <div class="compositional captioned_videos">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="data/videos/app/tulip_crystal.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">a photo of a lion</h6>
+            </div>
+            </div>
+            <br>
+
+        <div class="container" style="max-width: 768px;">
+            <div class="compositional captioned_videos">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="data/videos/app/tulip_fire.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">a photo of a lion</h6>
+            </div>
+            </div>
+            <br>
+    </div>
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Citation</h2>
+                <code>
+                    @article{wu2024sc4d,<br>
+                    &nbsp; author = {Wu, Zijie and Yu, Chaohui and Jiang, Yanqin and Cao, Chenjie and Wang Fan and Bai, Xiang.},<br>
+                    &nbsp; title  = {SC4D: Sparse-Controlled Video-to-4D Generation and Motion Transfer},<br>
+                    &nbsp; journal = {arXiv},<br>
+                    &nbsp; year   = {2024},<br>
+                }</code></div>
+        </div>
+    </div>
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <footer>
+            <p> Website template from <a href="https://sherwinbahmani.github.io/4dfy/">4dfy</a>. We thank the authors for the open-source code.</p>
+        </footer>
+    </div>
+    <script src="data/assets/js/yall.js"></script>
+    <script>
+        yall(
+            {
+                observeChanges: true
+            }
+        );
+    </script>
+</body>
+
+</html>

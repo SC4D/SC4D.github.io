@@ -80,80 +80,15 @@
                 </svg>
                 Code
             </a>
-            <a class="btn btn-light" role="button" href="gallery_vto4d.html">
+            <a class="btn btn-light" role="button" href="index.html">
                 <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px" viewBox="0 0 375 531">
                     <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 "></polygon>
                 </svg>
-                Vid-to-4D Gallery
-            </a>
-            <a class="btn btn-light" role="button" href="gallery_app.html">
-                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px" viewBox="0 0 375 531">
-                    <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 "></polygon>
-                </svg>
-                App Gallery
+                Project
             </a>
         </div>
         </div>
     </div>
-    <hr class="divider" />
-    <div class="container" style="max-width: 768px;">
-        <div class="compositional captioned_videos">
-            <video class="video lazy" autoplay loop playsinline muted>
-                <source data-src="data/videos/teaser.mp4" type="video/mp4"></source>
-            </video>
-        </div>
-    </div>
-    <hr class="divider" />
-    <div class="container" style="max-width: 768px;">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h2>Abstract</h2>
-                    </div>
-                </div>
-                <p>
-                    Recent advances in 2D/3D generative models enable the generation of dynamic 3D objects from a single-view video. Existing approaches utilize score distillation sampling to form the dynamic scene as dynamic NeRF or dense 3D Gaussians. However, these methods struggle to strike a balance among reference view alignment, spatio-temporal consistency, and motion fidelity under single-view conditions due to the implicit nature of NeRF or the intricate dense Gaussian motion prediction. To address these issues, this paper proposes an efficient, sparse-controlled video-to-4D framework named SC4D, that decouples motion and appearance to achieve superior video-to-4D generation. Moreover, we introduce Adaptive Gaussian (AG) initialization and Gaussian Alignment (GA) loss to mitigate shape degeneration issue, ensuring the fidelity of the learned motion and shape. Comprehensive experimental results demonstrate that our method surpasses existing methods in both quality and efficiency. In addition, facilitated by the disentangled modeling of motion and appearance of SC4D, we devise a novel application that seamlessly transfers the learned motion onto a diverse array of 4D entities according to textual descriptions.
-                </p>
-            </div>
-        </div>
-    </div>
-    <hr class="divider" />
-    <div class="container" style="max-width: 768px;">
-        <div class="row">
-            <div class="col-sm-12">
-                <h2>Video-to-4D Generation</h2>
-            </div>
-        </div>
-        <div class="row captioned_videos">
-            <div class="col-md-12">
-                <p>
-                    Given a single-view reference video, video-to-4D methods aim to recover a plausible dynamic 3D object that aligns with the video source. In this work, we propose a two-stage video-to-4D framework based on sparse control points, named SC4D, which utilizes separated modeling of appearance and motion to yield superior outcomes. In the coarse stage, we initialize control points as sphere Gaussians and learn a deformation MLP to predict the movements of these control points. Then in the fine stage, we utilize these control points to drive dense Gaussians in the LBS manner, and jointly optimize the appearance and motion together to obtain the final dynamic object. To ensure the fidelity of learned shape and motion in the fine stage, we introduce Adaptive Gaussian (AG) initialization based on control points, and Gaussian Alignment (GA) loss as an additional constraint. 
-                </p>
-                &nbsp;
-                <img src="data/Video-to-4D.png" alt="architecture" style="width: 100%">
-            </div>
-        </div>
-    </div>
-
-    <hr class="divider" />
-    <div class="container" style="max-width: 768px;">
-        <div class="row">
-            <div class="col-sm-12">
-                <h2>Motion Transfer Application</h2>
-            </div>
-        </div>
-        <div class="row captioned_videos">
-            <div class="col-md-12">
-                <p>
-                    Utilizing our video-to-4D framework, we can successfully extract the resultant dynamic 3D object as well as its motion represented by a set of moving control points. Leveraging this capability, we devise an application tailored for motion transfer predicated on the trajectories of these sparse control points. This application aims to synthesize dynamic objects of distinct entities that exhibit identical motion patterns, all instantiated through text descriptions. To achieve this, we fix the parameters of control points and deformation MLP to ensure motion indentity. Then we re-initialize the video-to-4D results using AG inialization, and adopt a depth-condition ControlNet as guidance to optimize the new dynamic object without motion degeneration. 
-                </p>
-                &nbsp;
-                <img src="data/Application.png" alt="architecture" style="width: 100%">
-            </div>
-        </div>
-    </div>
-
     <hr class="divider" />
     <div class="container" style="max-width: 768px;">
         <div class="row">
@@ -174,7 +109,142 @@
         <div class="container" style="max-width: 768px;">
         <div class="compositional captioned_videos">
             <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/ours/crocodile.mp4" type="video/mp4"></source>
+            </video>
+        </div>
+        </div>
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/ours/dancing_robot.mp4" type="video/mp4"></source>
+            </video>
+        </div>
+        </div>
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/ours/dancing_spiderman.mp4" type="video/mp4"></source>
+            </video>
+        </div>
+        </div>
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/ours/feeding_squirrel.mp4" type="video/mp4"></source>
+            </video>
+        </div>
+        </div> 
+        <br>
+    
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/ours/firing_pistol.mp4" type="video/mp4"></source>
+            </video>
+        </div>
+        </div>
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/ours/flying_ironman.mp4" type="video/mp4"></source>
+            </video>
+        </div>
+        </div>
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/ours/idling_elephant.mp4" type="video/mp4"></source>
+            </video>
+        </div>
+        </div>
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/ours/jack_russell.mp4" type="video/mp4"></source>
+            </video>
+        </div>
+        </div> 
+        <br>
+    
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/ours/lookup_kitten.mp4" type="video/mp4"></source>
+            </video>
+        </div>
+        </div>
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
                 <source data-src="data/videos/ours/patrick_star.mp4" type="video/mp4"></source>
+            </video>
+        </div>
+        </div>
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/ours/running_triceratops.mp4" type="video/mp4"></source>
+            </video>
+        </div>
+        </div>
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/ours/scaring_skull.mp4" type="video/mp4"></source>
+            </video>
+        </div>
+        </div> 
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/ours/siamese_cat.mp4" type="video/mp4"></source>
+            </video>
+        </div>
+        </div>
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/ours/sighing_frog.mp4" type="video/mp4"></source>
+            </video>
+        </div>
+        </div>
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/ours/smiling_corgi.mp4" type="video/mp4"></source>
+            </video>
+        </div>
+        </div>
+        <br>
+
+        <div class="container" style="max-width: 768px;">
+        <div class="compositional captioned_videos">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="data/videos/ours/swimming_guppie.mp4" type="video/mp4"></source>
             </video>
         </div>
         </div>
@@ -192,47 +262,7 @@
         <div class="container" style="max-width: 768px;">
         <div class="compositional captioned_videos">
             <video class="video lazy" autoplay loop playsinline muted>
-                <source data-src="data/videos/ours/running_triceratops.mp4" type="video/mp4"></source>
-            </video>
-        </div>
-        </div>
-        <br>
-        
-
-        <div class="col-sm-4 my-auto center" style="margin-left:auto; margin-right: auto;">
-            <a href="gallery_vto4d.html" class="btn btn-primary btn-lg btn-search">
-                Additional Results
-            </a>
-        </div>
-    </div>
-
-    
-    <hr class="divider" />
-    <div class="container" style="max-width: 768px;">
-        <div class="row">
-            <div class="col-sm-12">
-                <h2>Video-to-4D Comparisons</h2>
-            </div>
-        </div>
-        <div class="row" style="margin-bottom: 0px;">
-            <div class="col-xs-20 compare-title  compare-title-sm">
-                <p>Ref</p>
-            </div>
-            <div class="col-xs-24 compare-title  compare-title-sm">
-                <p>Consistent4D</p>
-            </div>
-            <div class="col-xs-24 compare-title  compare-title-sm">
-                <p>4DGen</p>
-            </div>
-            <div class="col-xs-30 compare-title  compare-title-sm">
-                <p>Ours</p>
-            </div>
-        </div>
-
-        <div class="container" style="max-width: 768px;">
-        <div class="compositional captioned_videos">
-            <video class="video lazy" autoplay loop playsinline muted>
-                <source data-src="data/videos/comp/elephant.mp4" type="video/mp4"></source>
+                <source data-src="data/videos/ours/walking_aurorus.mp4" type="video/mp4"></source>
             </video>
         </div>
         </div>
@@ -241,89 +271,13 @@
         <div class="container" style="max-width: 768px;">
         <div class="compositional captioned_videos">
             <video class="video lazy" autoplay loop playsinline muted>
-                <source data-src="data/videos/comp/jack.mp4" type="video/mp4"></source>
-            </video>
-        </div>
-        </div>
-        <br>
-
-        <div class="container" style="max-width: 768px;">
-        <div class="compositional captioned_videos">
-            <video class="video lazy" autoplay loop playsinline muted>
-                <source data-src="data/videos/comp/egret.mp4" type="video/mp4"></source>
-            </video>
-        </div>
-        </div>
-        <br>
-
-        <div class="container" style="max-width: 768px;">
-        <div class="compositional captioned_videos">
-            <video class="video lazy" autoplay loop playsinline muted>
-                <source data-src="data/videos/comp/robot.mp4" type="video/mp4"></source>
+                <source data-src="data/videos/ours/yellow_tang.mp4" type="video/mp4"></source>
             </video>
         </div>
         </div>
         <br>
     </div>
-
-    
-    <hr class="divider" />
-    <div class="container" style="max-width: 768px;">
-        <div class="row">
-            <div class="col-sm-12">
-                <h2>Motion Transfer Application</h2>
-            </div>
-        </div>
-
-       <div class="container" style="max-width: 768px;">
-        <div class="compositional captioned_videos">
-            <video class="video lazy" autoplay loop playsinline muted>
-                <source data-src="data/videos/app/rose_lego.mp4" type="video/mp4"></source>
-            </video>
-            <h6 class="caption">a lego style rose</h6>
-        </div>
-        </div> 
-        <br>
-
-        <div class="container" style="max-width: 768px;">
-        <div class="compositional captioned_videos">
-            <video class="video lazy" autoplay loop playsinline muted>
-                <source data-src="data/videos/app/pistol_fire.mp4" type="video/mp4"></source>
-            </video>
-            <h6 class="caption">a wooden pistol on fire</h6>
-        </div>
-        </div>
-        <br>
-
-        <div class="container" style="max-width: 768px;">
-        <div class="compositional captioned_videos">
-            <video class="video lazy" autoplay loop playsinline muted>
-                <source data-src="data/videos/app/full_black_widow.mp4" type="video/mp4"></source>
-            </video>
-            <h6 class="caption">a photo of the Black Widow</h6>
-        </div>
-        </div>
-        <br>
-
-        <div class="container" style="max-width: 768px;">
-        <div class="compositional captioned_videos">
-            <video class="video lazy" autoplay loop playsinline muted>
-                <source data-src="data/videos/app/cat_lion.mp4" type="video/mp4"></source>
-            </video>
-            <h6 class="caption">a photo of a lion</h6>
-        </div>
-        </div>
-        <br>
-        
-
-        <div class="col-sm-4 my-auto center" style="margin-left:auto; margin-right: auto;">
-            <a href="gallery_app.html" class="btn btn-primary btn-lg btn-search">
-                Additional Results
-            </a>
-        </div>
-    </div>
-    
-        
+   
     <hr class="divider" />
     <div class="container" style="max-width: 768px;">
         <div class="row">

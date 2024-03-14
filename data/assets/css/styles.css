@@ -770,15 +770,15 @@ hr.divider {
   width: 63%;
   margin: 0 auto;
   position: relative;
-  display: flex;
+  display: block;
+  line-height: 0;
 }
 
 
 
 /* 单个视频样式 */
 .video {
-    width: 100%;
-    height: auto;
+    height: 100px;
     position: relative;
     top: 0;
     left: 0;

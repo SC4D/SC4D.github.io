@@ -762,3 +762,30 @@ hr.divider {
         float: left;
     }
 }
+
+
+
+/* 整体容器样式 */
+.videos-container {
+  display: flex;
+}
+
+/* 单个视频样式 */
+.video {
+  height: 200px; /* 设置视频的统一高度 */
+}
+
+.video-1 {
+  flex: 1; /* 宽度比为1 */
+}
+
+.video-2, .video-3, .video-4 {
+  flex: 2; /* 宽度比为2 */
+}
+
+/* 为了视频显示不变形，我们设置视频内部的<video>标签属性 */
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 保持视频的原始比例 */
+}

@@ -767,6 +767,9 @@ hr.divider {
 
 /* 整体容器样式 */
 .videos-container {
+  width: 63%;
+  margin: 0 auto;
+  position: relative;
   display: flex;
 }
 

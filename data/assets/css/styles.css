@@ -773,9 +773,15 @@ hr.divider {
   display: flex;
 }
 
+
+
 /* 单个视频样式 */
 .video {
-  height: 200px; /* 设置视频的统一高度 */
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 .video-1 {

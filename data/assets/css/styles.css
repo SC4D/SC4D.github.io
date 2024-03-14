@@ -750,6 +750,18 @@ hr.divider {
 .col-xs-2 {
     width: 50.0%;
 }
+.col-xs-14 {
+    width: 14%;
+}
+.col-xs-17 {
+    width: 17.7%;
+}
+.col-xs-25 {
+    width: 25%;
+}
+.col-xs-31 {
+    width: 31%;
+}
 @media (min-width: 768px) {
 .col-sm-15 {
         width: 20%;

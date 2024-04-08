@@ -5,7 +5,7 @@ If you find SC4D useful for your work, please cite:
 @article{wu2023sc4d,
     author = {Wu, Zijie and Yu, Chaohui and Jiang, Yanqin and Cao, Chenjie and Wang Fan and Bai, Xiang.},
     title = {SC4D: Sparse-Controlled Video-to-4D Generation and Motion Transfer},
-    journal = {arxiv},
+    journal = {arxiv:2404.03736},
     year = {2024},
 }
 ```

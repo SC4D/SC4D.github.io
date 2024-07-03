@@ -1,4 +1,4 @@
-# SC4D
+# SC4D: Sparse-Controlled Video-to-4D Generation and Motion Transfer (ECCV 2024)
 This repository contains source code for project page of [SC4D project page](https://sc4d.github.io/). <br>
 If you find SC4D useful for your work, please cite:
 ```
